@@ -38,8 +38,17 @@ public class EmployeeDao {
 		return employees;
 	}
 	
+	public Employee findById(int id) {
+		Session ses = HibernateUtil.getSession();
+		
+		Employee emp = (Employee) ses.createQuery("from Employee where id=" + id);
+		return emp;
+	}
+	
 	// Delete
 	public boolean delete(int id) {
+		Session ses = HibernateUtil.getSession();
+		ses.delete(null, ses);
 		return false;
 	}
 	
