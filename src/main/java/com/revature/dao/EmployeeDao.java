@@ -30,7 +30,12 @@ public class EmployeeDao {
 	
 	// Read
 	public List<Employee> findAll() {
-		return null;
+		// grab the session object
+		Session ses = HibernateUtil.getSession();
+		
+		// Put class name in HQL not table name!
+		List<Employee> employees = ses.createQuery("from Employee").list();
+		return employees;
 	}
 	
 	// Delete
