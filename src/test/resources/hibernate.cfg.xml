@@ -27,11 +27,11 @@
       </property>
       
       <property name = "hibernate.default_schema">
-      	employee-login
+      	public
       </property>
       
       <!-- validate in production? CREATE always recreates the tables+data when run -->
-      <property name="hibernate.hbm2ddl.auto">create</property>	
+      <property name="hibernate.hbm2ddl.auto">update</property>	
       
       <!-- UPDATE: wouldn't delete anything, but would add tables or object  -->
 		<!-- VALIDATE: best for production checks to make sure that everything in the DB is as expected -->
@@ -43,7 +43,7 @@
       </property>
       
       <!-- List of persistent classes -->
-		
+		<mapping class="com.revature.models.Employee"/>
       
    </session-factory>
 </hibernate-configuration>

@@ -37,7 +37,7 @@ public class EmployeeService {
 			e.getUsername().equals(username) && e.getPassword().equals(password)).findFirst();
 		
 		// If the employee is present, return it, otherwise return empty Emp object (with id of 0)
-
+		System.out.println(possibleEmp);
 		return (possibleEmp.isPresent() ? possibleEmp.get() : new Employee());
 		// ideally you should optimize this and set up a custom exception
 	}
