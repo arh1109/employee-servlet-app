@@ -19,7 +19,7 @@ public class FrontController extends HttpServlet {
 		
 		// 1. URI rewriting - capture the URI and rewrite it
 		// http://localhost:8080/employee-servlet-app/login	-- we want to capture "/login"
-		final String URI = request.getRequestURI().replace("/employee-servlet-app/", "");
+		final String URI = request.getRequestURI().replace("/employee-servlet-app-original/", "");
 		
 		// set up a switch case statement in which we call the appropriate functionality based on the URI returned
 		switch(URI) {
@@ -29,6 +29,11 @@ public class FrontController extends HttpServlet {
 			break;
 		case "employees":
 			// invoke some funciton from the RequestHelper whcih will return all employees
+			RequestHelper.processEmployees(request, response);
+			break;
+		
+		case "register":
+			RequestHelper.processRegistration(request, response);
 			break;
 		default:
 			// custom error page
