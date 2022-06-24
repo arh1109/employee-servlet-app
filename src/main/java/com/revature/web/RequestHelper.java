@@ -39,8 +39,9 @@ public class RequestHelper {
 		// will return an entire list of all employees in JSON
 		
 		// 1. set the contetn type to be application/json
-//		response.setContentType("application/json");
-		response.setContentType("text/html");
+		response.setContentType("application/json");
+		response.addHeader("Access-Control-Allow-Origin", "*");
+//		response.setContentType("text/");
 		
 		// 2. call the findAll() method form the employee service
 		List<Employee> emps = eserv.getAll();
@@ -50,6 +51,7 @@ public class RequestHelper {
 		
 		// write it out
 		PrintWriter out = response.getWriter();
+		
 		out.write(jsonString);		// out.write sends it as response body
 		
 	}

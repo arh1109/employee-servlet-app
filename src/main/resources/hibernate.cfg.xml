@@ -39,7 +39,7 @@
 		<!-- NONE: hibernate doens't alter your schema or do anything -->
       
       <property name="connection.pool_size">10</property>
-      
+      <!-- <property name="hibernate.temp.use_jdbc_metadata_defaults" value="false" /> -->
       
       <!--  This will show all of the SQL statemnets that hibernate is generating for us -->
       <property name="hibernate.show_sql">true</property>
