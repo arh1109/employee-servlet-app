@@ -66,8 +66,11 @@ function fetchEmps() {
     // make HTTP requests to a server and process the results
     // you get asynchronously
     let hostname = window.location.hostname;    // this will grab the IP of where it's deployed
-
-    fetch(`http://${hostname}:8080/employee-servlet-app-original/employees`)
+    
+    // this works on localhost
+    // fetch(`http://${hostname}:8080/employee-servlet-app-original/employees`)
+    
+    fetch(`http://${hostname}/employee-servlet-app-original/employees`)
         .then(response => response.json()) // this takes a json string and transforms 
                                             //  it to a JS object
         .then(buildTable);
